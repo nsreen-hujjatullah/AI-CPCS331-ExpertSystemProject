@@ -1,0 +1,196 @@
+# link 
+# https://colab.research.google.com/drive/1ei_efINU-lUyeGH7B5OpZFJCgcQZdvoG#scrollTo=icmUGSkEeZUV&line=1&uniqifier=1
+
+from experta import *
+class Mother(Fact):
+ pass
+    
+class MotherQ1(KnowledgeEngine):
+ @Rule(AND(Mother(MotherState = 'yes')),(Mother(trimesterOfPregnancy ='f')))
+ def first_trimester(self):
+  ask1_vitamins=input("Do you take prenatal vitamins and folic acid? (yes/no) ").lower()
+  if ask1_vitamins =='yes':
+    print("\nThat is so good \n\n")
+  elif ask1_vitamins =='no':
+    print("\nYou should take prenatal vitamins and folic acid\n\n")
+  ask1_sickness=input("Do you experience morning sickness? (yes/no) ").lower()
+  if ask1_sickness =='no':
+    print("\nThat is so good \n\n")
+  elif ask1_sickness =='yes':
+    print("\nRecommend taking ginger supplements to alleviate nausea \n\n")
+  ask1_miscarriages=input("Do you have a history of recurrent miscarriages? (yes/no) ").lower()
+  if ask1_miscarriages =='no':
+    print("\nThat is so good \n\n")
+  elif ask1_miscarriages =='yes':
+    print("\nPrescribe progesterone supplements to support the pregnancy \n\n")
+  ask1_bloodType=input("Do you have an Rh-negative blood type? (yes/no) ").lower()
+  if ask1_bloodType =='no':
+    print("\nThat is so good \n\n")
+  elif ask1_bloodType =='yes':
+    print("\nRecommend receiving Rh immunoglobulin (RhIg) to prevent potential issues with Rh incompatibility \n\n")
+  ask1_criticalCases=input("Do you suffer from any of the following? Breathing difficulty or Swelling of the face, legs, and hands or Blurred eyes\n" 
+  "and blurred vision or Fainting spells or Continuous diarrhea and vomiting or High body temperature or Spasms of the limbs and chest? (yes/no) ").lower()
+  if ask1_criticalCases =='no':
+    print("\nThat is so good \n\n")
+  elif ask1_criticalCases =='yes':
+    print("\nYou should go to the doctor immediately \n\n")
+  ask1_tips=input("Do you want some suggestions for useful tips to follow? (yes/no) ").lower()
+  if ask1_tips =='no':
+    print("\nWe wish you a healthy and comfortable pregnancy \n"
+"Thanks for using our system :)  \n\n")
+  elif ask1_tips =='yes':
+    print("\n• Avoid x-rays.\n• Avoid approaching cats.\n• Avoid getting close to the paint\n• Get the necessary vitamins by consulting your doctor\n"
+    "• Stay away from raw fish like sushi \n• Avoid fish that are high in iodine\n• Stay away from unpasteurized cheese\n"
+    "• Stay away from cold cuts like sausage and mortadella\n• Avoid drinking too much coffee.\n\n")
+    print("\nWe wish you a healthy and comfortable pregnancy \n"
+"Thanks for using our system :)  \n\n")
+############################################################################
+ @Rule(AND(Mother(MotherState = 'yes')),(Mother(trimesterOfPregnancy ='s')))
+ def second_trimester(self):
+   ask2_iron=input("Do you have low iron levels? (yes/no) ").lower()
+   if ask2_iron =='yes':
+    print("\n Prescribe iron supplements to prevent anemia. \n\n")
+   elif ask2_iron =='no':
+    print("\nThat is so good\n\n")
+   ask2_gestational=input("Do you have gestational diabetes? (yes/no) ").lower()
+   if ask2_gestational =='yes':
+    print("\n Recommend a balanced diet with controlled carbohydrate intake and regular exercise\n\n")
+   elif ask2_gestational =='no':
+    print("\nThat is so good\n\n")
+   ask2_constipation=input("Do you have constipation? (yes/no) ").lower()
+   if ask2_constipation =='yes':
+    print("\n Advise increasing fiber intake and drinking plenty of water\n\n")
+   elif ask2_constipation =='no':
+    print("\nThat is so good\n\n")
+   ask2_sleeping=input("Do you have trouble sleeping? (yes/no) ").lower()
+   if ask2_sleeping =='yes':
+    print("\n Recommend establishing a bedtime routine, maintaining a comfortable sleep environment,\n "
+    "and practicing relaxation techniques such as deep breathing or prenatal meditation\n\n")
+   elif ask2_sleeping =='no':
+    print("\nThat is so good\n\n")
+   ask2_legcramps=input("Do you have experience leg cramps? (yes/no) ").lower()
+   if ask2_legcramps =='yes':
+    print("\n Recommend gentle stretching exercises and increasing intake of calcium and magnesium-rich foods or supplements\n\n")
+   elif ask2_legcramps =='no':
+    print("\nThat is so good\n\n")
+   ask2_bloodType=input("Do you have an Rh-negative blood type? (yes/no) ").lower()
+   if ask2_bloodType =='no':
+    print("\nThat is so good \n\n")
+   elif ask2_bloodType =='yes':
+    print("\n Recommend receiving Rh immunoglobulin (RhIg) to prevent potential issues with Rh incompatibility \n\n")
+   ask2_criticalCases=input("Do you suffer from any of the following? Breathing difficulty or Swelling of the face, legs, and hands or Blurred eyes\n" 
+   "and blurred vision or Fainting spells or Continuous diarrhea and vomiting or High body temperature or Spasms of the limbs and chest? (yes/no) ").lower()
+   if ask2_criticalCases =='no':
+    print("\nThat is so good \n\n")
+   elif ask2_criticalCases =='yes':
+    print("\n You should go to the doctor immediately \n\n")
+   ask2_tips=input("Do you want some suggestions for useful tips to follow? (yes/no) ").lower()
+   if ask2_tips =='no':
+    print("\n We wish you a healthy and comfortable pregnancy \n"
+    "Thanks for using our system :)  \n\n")
+   elif ask2_tips =='yes':
+    print("\n• Avoid x-rays.\n• Avoid approaching cats.\n• Avoid getting close to the paint\n"
+    "• Get the necessary vitamins by consulting your doctor\n"
+    "• Stay away from raw fish like sushi \n• Avoid fish that are high in iodine\n• Stay away from unpasteurized cheese\n"
+    "• Stay away from cold cuts like sausage and mortadella\n• Avoid drinking too much coffee.\n\n")
+    print("\nWe wish you a healthy and comfortable pregnancy \n"
+    "Thanks for using our system :)  \n\n")
+############################################################################
+ @Rule(AND(Mother(MotherState = 'yes')),(Mother(trimesterOfPregnancy ='t')))
+ def third_trimester(self):
+   ask3_heartburn=input("Do you have to experience heartburn? (yes/no) ").lower()
+   if ask3_heartburn =='yes':
+    print("\n Advise avoiding spicy and greasy foods and recommend taking antacids after meals \n\n")
+   elif ask3_heartburn =='no':
+    print("\nThat is so good\n\n")
+   ask3_ankles=input("Do you have swollen ankles? (yes/no) ").lower()
+   if ask3_ankles =='yes':
+    print("\n Suggest elevating the legs and avoiding prolonged standing or sitting. \n\n")
+   elif ask3_ankles =='no':
+    print("\nThat is so good\n\n")
+   ask3_backpain=input("Do you experience back pain? (yes/no) ").lower()
+   if ask3_backpain =='yes':
+    print("\n Recommend prenatal yoga, gentle stretching, and using a pregnancy support belt \n\n")
+   elif ask3_backpain =='no':
+    print("\nThat is so good\n\n")
+   ask3_swelling=input("Do you have swelling in the hands and face along with high blood pressure? (yes/no) ").lower()
+   if ask3_swelling =='yes':
+    print("\n Consult a healthcare professional immediately as it may indicate preeclampsia \n\n")
+   elif ask3_swelling =='no':
+    print("\nThat is so good\n\n") 
+   ask3_breath =input("Do you have experiencing shortness of breath? (yes/no) ").lower()
+   if ask3_breath =='yes':
+    print("\n Advise her to maintain good posture, practice deep breathing exercises, and avoid overexertion \n\n")
+   elif ask3_breath =='no':
+    print("\nThat is so good\n\n") 
+   ask3_fetal=input("Do you have reduced fetal movement? (yes/no) ").lower()
+   if ask3_fetal =='yes':
+    print("\n Advise her to seek immediate medical attention for further evaluation \n\n")
+   elif ask3_fetal =='no':
+    print("\nThat is so good\n\n")    
+   ask3_Prematurebirth=input("Do you have regular contractions, lasting less than two minutes between one contraction and the next,\n"
+    " extreme pressure and stress on you, and the descent of the fetal waters?").lower()
+   if ask3_Prematurebirth =='yes':
+    print("\n It may be childbirth, and you should go to the doctor immediately\n\n")
+   elif ask3_Prematurebirth =='no':
+    print("\nThat is so good\n\n") 
+   ask3_gestational=input("Do you have gestational diabetes? (yes/no) ").lower()
+   if ask3_gestational =='yes':
+    print("\n Recommend a balanced diet with controlled carbohydrate intake and regular exercise\n\n")
+   elif ask3_gestational =='no':
+    print("\nThat is so good\n\n")
+   ask3_constipation=input("Do you have constipation? (yes/no) ").lower()
+   if ask3_constipation =='yes':
+    print("\n Advise increasing fiber intake and drinking plenty of water\n\n")
+   elif ask3_constipation =='no':
+    print("\nThat is so good\n\n")
+   ask3_sleeping=input("Do you have trouble sleeping? (yes/no) ").lower()
+   if ask3_sleeping =='yes':
+    print("\n Recommend establishing a bedtime routine, maintaining a comfortable sleep environment,\n "
+    "and practicing relaxation techniques such as deep breathing or prenatal meditation\n\n")
+   elif ask3_sleeping =='no':
+    print("\nThat is so good\n\n")
+   ask3_legcramps=input("Do you have experience leg cramps? (yes/no) ").lower()
+   if ask3_legcramps =='yes':
+    print("\n Recommend gentle stretching exercises and increasing intake of calcium and magnesium-rich foods or supplements\n\n")
+   elif ask3_legcramps =='no':
+    print("\nThat is so good\n\n")
+   ask3_bloodType=input("Do you have an Rh-negative blood type? (yes/no) ").lower()
+   if ask3_bloodType =='no':
+    print("\nThat is so good \n\n")
+   elif ask3_bloodType =='yes':
+    print("\n Recommend receiving Rh immunoglobulin (RhIg) to prevent potential issues with Rh incompatibility \n\n")
+   ask3_criticalCases=input("Do you suffer from any of the following? Breathing difficulty or Swelling of the face, legs, and hands or Blurred eyes\n" 
+   "and blurred vision or Fainting spells or Continuous diarrhea and vomiting or High body temperature or Spasms of the limbs and chest? (yes/no) ").lower()
+   if ask3_criticalCases =='no':
+    print("\nThat is so good \n\n")
+   elif ask3_criticalCases =='yes':
+    print("\n You should go to the doctor immediately \n\n")
+   ask3_tips=input("Do you want some suggestions for useful tips to follow? (yes/no) ").lower()
+   if ask3_tips =='no':
+    print("\n We wish you a healthy and comfortable pregnancy \n"
+    "Thanks for using our system :)  \n\n")
+   elif ask3_tips =='yes':
+    print("\n• Avoid x-rays.\n• Avoid approaching cats.\n• Avoid getting close to the paint\n"
+    "• Get the necessary vitamins by consulting your doctor\n"
+    "• Stay away from raw fish like sushi \n• Avoid fish that are high in iodine\n"
+    "• Stay away from unpasteurized cheese\n"
+    "• Stay away from cold cuts like sausage and mortadella\n"
+    "• Avoid drinking too much coffee.\n\n")
+    print("\nWe wish you a healthy and comfortable pregnancy \n"
+    "Thanks for using our system :)  \n\n")
+
+
+#start 
+ask_motherState=input("Are you pregnant or are you planning to be pregnant? (yes/no)   ").lower()
+if ask_motherState =='no':
+    print("\nSorry, our system cannot serve you ): \n\n")
+elif ask_motherState =='yes':
+ engine=MotherQ1()
+ engine.reset()
+ ask_trimesterOfPregnancy= input("In which trimester of pregnancy are you? (first trimester(0-12 weeks)/second trimester(13-27 weeks)/third trimester(28-40 weeks))\n"
+"     (->Enter F for first ,S for second ,T for third)   ").lower()
+ engine.declare(Mother(MotherState=ask_motherState,trimesterOfPregnancy=ask_trimesterOfPregnancy))
+ engine.run()
+ engine.reset()
+ engine.run()
